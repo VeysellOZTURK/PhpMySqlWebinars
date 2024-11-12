@@ -1,0 +1,28 @@
+//Tablo oluşturma
+CREATE DATABASE webinar_db;
+
+USE webinar_db;
+
+CREATE TABLE webinars (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    date DATETIME NOT NULL,
+    status TINYINT(1) NOT NULL DEFAULT 1,  -- 1: Aktif, 0: Pasif
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+//Inser işlemi
+INSERT INTO webinars (title, description, date, status, created_at) VALUES 
+('Node.js ile Mikroservis Mimarisi', 'Express.js ve NestJS kullanarak ölçeklenebilir mikroservis uygulamaları geliştirin. Message queue sistemleri, API Gateway ve service discovery konularında pratik deneyim kazanın.', '2024-12-20 14:00:00', 1, NOW()),
+
+('Flutter ile Cross-Platform Uygulama Geliştirme', 'Tek kod tabanıyla iOS ve Android için native performanslı uygulamalar geliştirmeyi öğrenin. State management, UI tasarımı ve backend entegrasyonu konularında uzmanlaşın.', '2024-12-25 15:30:00', 1, NOW()),
+
+('AWS Cloud Solutions Architect', 'Amazon Web Services üzerinde ölçeklenebilir ve güvenli cloud mimarileri tasarlamayı öğrenin. EC2, S3, Lambda, RDS ve diğer AWS servislerini profesyonel seviyede kullanın.', '2025-01-05 10:00:00', 1, NOW()),
+
+('Veri Tabanı Optimizasyonu ve Performance Tuning', 'MySQL ve PostgreSQL veritabanlarında query optimizasyonu, indeksleme stratejileri ve performance tuning tekniklerini öğrenin. Real-time monitoring ve troubleshooting yeteneklerinizi geliştirin.', '2025-01-10 13:00:00', 0, NOW()),
+
+('UI/UX Tasarım Prensipleri', 'Modern kullanıcı arayüzü tasarım prensiplerini ve kullanıcı deneyimi geliştirme tekniklerini öğrenin. Figma ile prototip oluşturma ve design system geliştirme konularında pratik yapın.', '2025-01-15 16:00:00', 1, NOW());
+
+('Created by', 'Veysel ÖZTÜRK', '2025-01-15 16:00:00', 0, NOW());
